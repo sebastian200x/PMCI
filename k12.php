@@ -8,8 +8,8 @@
     <title>K-12 PROGRAMS</title>
 </head>
 
+<?php include 'header.php'; ?>
 <body>
-    <?php include 'header.php'; ?>
     <main>
 
 

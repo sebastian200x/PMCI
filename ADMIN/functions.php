@@ -189,7 +189,7 @@ function login($username, $password)
 
 	// Prepare SQL statement to select username 
 	// and password from account table.
-	$sql = "SELECT username, password FROM account WHERE username = ?";
+	$sql = "SELECT username, password, id FROM account WHERE username = ?";
 	$stmt = $mysqli->prepare($sql);
 
 	// Bind the username parameter to the prepared statement.
@@ -217,7 +217,8 @@ function login($username, $password)
 	} else {
 		// If authentication is successful, 
 		// set the user session and redirect to account page.
-		$_SESSION["admin"] = $username;
+		$id = $data["id"];
+		$_SESSION["admin"] = $id;
 		header("location: home.php");
 		exit();
 	}
@@ -257,9 +258,9 @@ function uploadImage($file, $title, $description, $date)
 	}
 
 	// Allow certain file formats
-	$allowedFormats = array("jpg", "jpeg", "png");
+	$allowedFormats = array("jpg", "jpeg", "png", "webp");
 	if (!in_array($imageFileType, $allowedFormats)) {
-		return "Sorry, only JPG, JPEG & PNG files are allowed.";
+		return "Sorry, only WEBP, JPG, JPEG & PNG files are allowed.";
 	}
 
 	// Move uploaded file to target directory
@@ -308,7 +309,7 @@ function getnews()
 			$news .= '<div class="news">
 							<div class="del">
 								<!-- Edit button -->
-								<button onclick="edit(' . $row['id'] . ')" class="editbtn"><i class="fas fa-edit"></i> Edit</button>
+								<button onclick="editmodal(' . $row['id'] . ')" class="editbtn"><i class="fas fa-edit"></i> Edit</button>
 								<button class="delbtn"><i class="fas fa-trash-alt"></i> Delete</button>
 							</div>
 							<div class="news-img">
@@ -327,8 +328,7 @@ function getnews()
 							<span class="close" onclick="closeModal(' . $row['id'] . ')">&times;</span>
 							<h2>Modal Form</h2>
 							<form id="myForm' . $row['id'] . '" action="" method="POST">
-                                <label for="image">IMAGE</label>
-                                <input type="file" name="image" id="image" accept="image/*" required><br>
+                                
 
                                 <label for="title">TITLE</label>
                                 <input class="title" type="text" name="title" id="title" value="' . $row['title'] . '"
@@ -336,20 +336,20 @@ function getnews()
 
                                 <label for="description">DESCRIPTION</label>
                                 <textarea name="description" class="desc" id="description" placeholder="Description of the News"
-                                    required> ' . $row['description'] . ' </textarea>
+                                    required>' . $row['description'] . '</textarea>
 
                                 <label for="date">DATE</label>
                                 <input type="date" name="date" id="date" class="date" value="' . $valuedate . '" required><br>
 
                                 <div class="sub">
-                                    <input class="submit" type="submit" value="Edit" name="edit">
+									<input class="submit" type="submit" value="Edit" id="edit_submit_' . $row['id'] . '" name="edit_submit_' . $row['id'] . '">
                                 </div>
                             </form>
                         </div>
                     </div>
                     <script>
 						// Function to open the modal
-						function edit(id) {
+						function editmodal(id) {
 							var modal = document.getElementById("myModal" + id);
 							modal.style.display = "block";
 						}
@@ -373,12 +373,31 @@ function getnews()
 							}
 						}
 					</script>';
+			if (isset ($_POST['edit_submit_' . $row['id']])) {
+				$id = $row['id'];
+				$title = $_POST['title'];
+				$description = $_POST['description'];
+				$date = $_POST['date'];
+
+				// Process the edited news data and update the database accordingly
+				$sql_update = "UPDATE news SET title='$title', description='$description', reg_date='$date' WHERE id='$id'";
+				if ($mysqli->query($sql_update) === TRUE) {
+					echo "Record updated successfully";
+					header("Location: " . $_SERVER['REQUEST_URI']); // Redirect to the same page
+					exit();
+				} else {
+					echo "Error updating record: " . $mysqli->error;
+				}
+			}
 		}
+
+
 		return $news;
 	} else {
 		echo "<h1>No news found.</h1>";
 		return '';
 	}
+
 }
 
 
@@ -419,6 +438,63 @@ function news()
 		return '';
 	}
 }
+
+
+function accountinfo()
+{
+	if (isset ($_SESSION['admin'])) {
+		$mysqli = connect();
+
+		if ($mysqli === false) {
+			return false;
+		}
+
+		$sql = "SELECT * FROM account WHERE id = ?";
+		$stmt = $mysqli->prepare($sql);
+		$stmt->bind_param("i", $_SESSION['admin']);
+		$stmt->execute();
+		$result = $stmt->get_result();
+
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+			return [
+				'name' => $row['name'],
+				'email' => $row['email'],
+				'username' => $row['username']
+			];
+		}
+	}
+	return false;
+}
+
+
+function editprofile($name, $email, $username)
+{
+	if (isset ($_SESSION['admin'])) {
+
+		$mysqli = connect();
+
+		if (!$mysqli) {
+			return false;
+		}
+		$id = $_SESSION['admin'];
+		$sql = "UPDATE account SET name = '$name', email = '$email', username = '$username' WHERE id = $id";
+		$result = $mysqli->query($sql);
+
+		if ($result) {
+			header("Location: ./profile.php");
+			return "success";
+
+		} else {
+			header("Location: ./profile.php");
+			return "Database Failed, please try again.";
+		}
+	} else {
+		header("Location: ./index.php");
+		exit();
+	}
+}
+
 
 
 

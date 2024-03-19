@@ -1,4 +1,3 @@
-
 * {
 
     margin: 0;
@@ -34,8 +33,7 @@ label {
 
 }
 
-.submit button {
-
+.button {
     background-color: #006828;
     color: white;
     border: none;
@@ -52,7 +50,7 @@ label {
 main {
 
     padding-inline: 50px;
-    
+
 }
 
 .profile-container {
@@ -77,4 +75,14 @@ main h1 {
 
     text-align: center;
     margin-top: 20px;
+}
+
+.success {
+    text-align: center;
+    color: green;
+}
+
+.error {
+    color: red;
+    text-align: center;
 }

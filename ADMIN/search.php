@@ -45,11 +45,6 @@
 </head>
 <body>
 
-<div class="navbar">
-  <a href="page1.php" <?php if($currentPage === 'page1.php') echo 'class="active"'; ?>>Page 1</a>
-  <a href="page2.php" <?php if($currentPage === 'page2.php') echo 'class="active"'; ?>>Page 2</a>
-  <!-- Add more page links as needed -->
-</div>
 
 
 
