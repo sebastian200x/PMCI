@@ -124,7 +124,6 @@ label {
 
 
 .delbtn {
-
     background-color: rgb(161, 17, 17);
     padding: 10px 30px;
     border: none;
@@ -133,7 +132,6 @@ label {
     border-radius: 10px;
     cursor: pointer;
     margin: 10px 10px 0 0;
-
 }
 
 .editbtn {

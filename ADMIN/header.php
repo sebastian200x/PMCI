@@ -28,12 +28,9 @@
     <script>
         function confirmLogout() {
             var response = confirm('Are you sure you want to log out?');
-
             if (response) {
-                // User clicked "Yes" - proceed with logout
                 return true;
             } else {
-                // User clicked "No" - cancel the form submission
                 return false;
             }
         }

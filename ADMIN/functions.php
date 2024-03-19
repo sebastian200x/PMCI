@@ -309,11 +309,12 @@ function getnews()
 			$news .= '<div class="news">
 							<div class="del">
 								<!-- Edit button -->
-								<button onclick="editmodal(' . $row['id'] . ')" class="editbtn"><i class="fas fa-edit"></i> Edit</button>
-								<button class="delbtn"><i class="fas fa-trash-alt"></i> Delete</button>
+								<input type="submit" class="delbtn fas" value="&#xf303; Edit" onclick="edit(' . $row['id'] . ')">
+								<input type="submit" class="editbtn fas" name="editbtn" value="&#xf2ed; Delete" onclick="delete(' . $row['id'] . ')">
+
 							</div>
 							<div class="news-img">
-								<img src="' . $row['image_path'] . '" alt="" draggable="false">
+								<img src="' . $row['image_path'] . '" alt="Picture not found" draggable="false">
 							</div>
 							<div class="details">
 								<h1>' . $row['title'] . '</h1>
@@ -342,14 +343,15 @@ function getnews()
                                 <input type="date" name="date" id="date" class="date" value="' . $valuedate . '" required><br>
 
                                 <div class="sub">
-									<input class="submit" type="submit" value="Edit" id="edit_submit_' . $row['id'] . '" name="edit_submit_' . $row['id'] . '">
+									<input class="submit" type="submit" value="Edit" name="edit_submit_'.$row['id'].'">
                                 </div>
                             </form>
                         </div>
                     </div>
                     <script>
+
 						// Function to open the modal
-						function editmodal(id) {
+						function edit(id) {
 							var modal = document.getElementById("myModal" + id);
 							modal.style.display = "block";
 						}
@@ -366,14 +368,24 @@ function getnews()
 							modal.style.display = "none";
 						}
 
-						// Close the modal when the user clicks anywhere outside of it
-						window.onclick = function(event) {
-							if (event.target.className === "modal") {
-								event.target.style.display = "none";
+						// close the modal on pressing escape
+						document.addEventListener("keydown", function(event) {
+							if (event.key === "Escape") {
+								closeModal(' . $row['id'] . ');
+							}
+						})
+						
+						function deleteItem(id) {
+							var response = confirm("Are you sure you want to delete this item?");
+							if (response) {
+								return true;
+							} else {
+								return false;
 							}
 						}
+
 					</script>';
-			if (isset ($_POST['edit_submit_' . $row['id']])) {
+			if (isset ($_POST['edit_submit_'.$row['id']])) {
 				$id = $row['id'];
 				$title = $_POST['title'];
 				$description = $_POST['description'];
@@ -389,6 +401,9 @@ function getnews()
 					echo "Error updating record: " . $mysqli->error;
 				}
 			}
+
+
+
 		}
 
 
@@ -494,7 +509,6 @@ function editprofile($name, $email, $username)
 		exit();
 	}
 }
-
 
 
 

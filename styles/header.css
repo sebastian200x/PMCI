@@ -9,16 +9,10 @@
 }
 
 .top {
-
-   
     width: 100%;
-
-    
-   
 }
 
 .body {
-
     min-height: 100vh;
 }
 
@@ -29,7 +23,7 @@ header {
     height: AUTO;
     padding: 1px;
     color: rgb(255, 255, 14);
-   
+
 }
 
 .head-container {
@@ -75,9 +69,9 @@ header {
 nav {
     background-color: white;
     border-bottom: 2px solid black;
-    
-   
-    
+
+
+
 
 }
 
@@ -88,7 +82,7 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    
+
 
 
 }
@@ -98,7 +92,7 @@ nav {
     font-weight: 600;
     font-size: 50px;
     letter-spacing: 10px;
-    
+
 }
 
 .navi {
@@ -114,7 +108,7 @@ nav {
 nav a {
 
     text-decoration: none;
-    
+
 
 
 }
@@ -136,7 +130,7 @@ nav a {
     border-radius: 40px;
     color: #047e45;
 
-   
+
 
 }
 
@@ -168,7 +162,7 @@ nav a {
     .img-logo {
 
         display: none;
-        
+
     }
 
     .nav-container {
@@ -195,7 +189,7 @@ nav a {
 
         display: block;
     }
-    
+
     .sidebar {
         height: 100%;
         width: 0;
@@ -207,47 +201,47 @@ nav a {
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
-      }
-      
-      .sidebar a {
+    }
+
+    .sidebar a {
         padding: 10px 15px;
         text-decoration: none;
         font-size: 20px;
         color: rgb(255, 255, 14);
         display: block;
         transition: 0.3s;
-      }
-      
-      .sidebar a:hover {
+    }
+
+    .sidebar a:hover {
         color: #f1f1f1;
-      }
-      
-      .sidebar .closebtn {
+    }
+
+    .sidebar .closebtn {
         position: absolute;
         top: 0;
         right: 25px;
         font-size: 36px;
         margin-left: 50px;
-      }
-      
-      .open-sidebar {
+    }
+
+    .open-sidebar {
         width: 250px;
-      }
-      
-      .close-sidebar {
+    }
+
+    .close-sidebar {
         width: 0;
-      }
-
-      
-      
+    }
 
 
 
 
-    
 
 
-    
+
+
+
+
+
 
 }
 
@@ -266,10 +260,10 @@ nav a {
         border-radius: 50%;
     }
 
-    
 
-    
-    
+
+
+
 
 }
 
@@ -282,7 +276,7 @@ nav a {
 
 
 
-.menu{
+.menu {
     list-style-type: none;
 
 }
@@ -290,8 +284,8 @@ nav a {
 
 .drop-menu {
     list-style-type: none;
-    
-   
+
+
 }
 
 .menu-item {
@@ -299,7 +293,7 @@ nav a {
     position: relative;
     z-index: 999;
 
-    
+
 }
 
 .menu-item a {
@@ -315,7 +309,7 @@ nav a {
     background-color: #fff;
     margin-TOP: 16PX;
 
-    
+
 }
 
 .drop-menu-item {
@@ -325,7 +319,7 @@ nav a {
 
 .drop-menu-item:hover {
     background-color: rgb(201, 198, 198);
-    
+
 }
 
 .drop-menu-item a {
@@ -334,10 +328,6 @@ nav a {
 
 .name:hover .drop-menu {
     display: block;
-  
-    
+
+
 }
-
-
-
-
