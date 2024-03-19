@@ -309,8 +309,9 @@ function getnews()
 			$news .= '<div class="news">
 							<div class="del">
 								<!-- Edit button -->
-								<input type="submit" class="delbtn fas" value="&#xf303; Edit" onclick="edit(' . $row['id'] . ')">
-								<input type="submit" class="editbtn fas" name="editbtn" value="&#xf2ed; Delete" onclick="delete(' . $row['id'] . ')">
+							<form id="myForm' . $row['id'] . '" action="" method="POST">
+							<input type="submit" class="delbtn fas" value="&#xf303; Edit" onclick="edit(' . $row['id'] . ')">
+								<input type="submit" class="editbtn fas" value="&#xf2ed; Delete" name="delete_' . $row['id'] . '" onclick="deleteItem()">
 
 							</div>
 							<div class="news-img">
@@ -328,7 +329,6 @@ function getnews()
 						<div class="modal-content">
 							<span class="close" onclick="closeModal(' . $row['id'] . ')">&times;</span>
 							<h2>Modal Form</h2>
-							<form id="myForm' . $row['id'] . '" action="" method="POST">
                                 
 
                                 <label for="title">TITLE</label>
@@ -343,11 +343,11 @@ function getnews()
                                 <input type="date" name="date" id="date" class="date" value="' . $valuedate . '" required><br>
 
                                 <div class="sub">
-									<input class="submit" type="submit" value="Edit" name="edit_submit_'.$row['id'].'">
+									<input class="submit" type="submit" value="Update" name="update_' . $row['id'] . '">
                                 </div>
-                            </form>
-                        </div>
-                    </div>
+								</form>
+								</div>
+								</div>
                     <script>
 
 						// Function to open the modal
@@ -375,7 +375,7 @@ function getnews()
 							}
 						})
 						
-						function deleteItem(id) {
+						function deleteItem() {
 							var response = confirm("Are you sure you want to delete this item?");
 							if (response) {
 								return true;
@@ -385,7 +385,7 @@ function getnews()
 						}
 
 					</script>';
-			if (isset ($_POST['edit_submit_'.$row['id']])) {
+			if (isset ($_POST['update_' . $row['id']])) {
 				$id = $row['id'];
 				$title = $_POST['title'];
 				$description = $_POST['description'];
@@ -393,12 +393,25 @@ function getnews()
 
 				// Process the edited news data and update the database accordingly
 				$sql_update = "UPDATE news SET title='$title', description='$description', reg_date='$date' WHERE id='$id'";
+
 				if ($mysqli->query($sql_update) === TRUE) {
 					echo "Record updated successfully";
 					header("Location: " . $_SERVER['REQUEST_URI']); // Redirect to the same page
 					exit();
 				} else {
 					echo "Error updating record: " . $mysqli->error;
+				}
+			}
+
+			if (isset ($_POST['delete_' . $row['id']])) {
+				$id = $row['id'];
+				$sql_delete = "DELETE FROM news WHERE id='$id'";
+				if ($mysqli->query($sql_delete) === TRUE) {
+					echo "Record deleted successfully";
+					header("Location: " . $_SERVER['REQUEST_URI']); // Redirect to the same page
+					exit();
+				} else {
+					echo "Error deleting record: " . $mysqli->error;
 				}
 			}
 
