@@ -280,12 +280,14 @@ function uploadImage($file, $title, $description, $date)
 	}
 }
 
+
+
 function getnews()
 {
 	// Establish a database connection.
 	$mysqli = connect();
 
-	// If there's an error in database the program will stop function
+	// If there's an error in the database, the program will stop function
 	if (!$mysqli) {
 		return false;
 	}
@@ -298,27 +300,83 @@ function getnews()
 		while ($row = $result->fetch_assoc()) {
 
 			$regDate = new DateTime($row['reg_date']);
-			$formattedDate = $regDate->format('F j, Y'); // Format the date as desired
+			$readabledate = $regDate->format('F j, Y'); // Format the date as desired
 
+			$fetchedDate = $row['reg_date'];
+			$valuedate = date('Y-m-d', strtotime($fetchedDate));
 
 			$news .= '<div class="news">
-                        <div class="del">
-                            <input class="editbtn fa" type="submit" name="" id="" value="&#xf044; Edit">
-                            <input class="delbtn fa" type="submit" name="" id="" value="&#xf1f8; Delete">
+							<div class="del">
+								<!-- Edit button -->
+								<button onclick="edit(' . $row['id'] . ')" class="editbtn"><i class="fas fa-edit"></i> Edit</button>
+								<button class="delbtn"><i class="fas fa-trash-alt"></i> Delete</button>
+							</div>
+							<div class="news-img">
+								<img src="' . $row['image_path'] . '" alt="" draggable="false">
+							</div>
+							<div class="details">
+								<h1>' . $row['title'] . '</h1>
+								<H3> [' . $readabledate . '] </H3> <br>
+								<p>' . $row['description'] . '</p>
+							</div>
+						</div>
+
+                    <div id="myModal' . $row['id'] . '" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span class="close" onclick="closeModal(' . $row['id'] . ')">&times;</span>
+							<h2>Modal Form</h2>
+							<form id="myForm' . $row['id'] . '" action="" method="POST">
+                                <label for="image">IMAGE</label>
+                                <input type="file" name="image" id="image" accept="image/*" required><br>
+
+                                <label for="title">TITLE</label>
+                                <input class="title" type="text" name="title" id="title" value="' . $row['title'] . '"
+                                    placeholder="Title of the News" required><br>
+
+                                <label for="description">DESCRIPTION</label>
+                                <textarea name="description" class="desc" id="description" placeholder="Description of the News"
+                                    required> ' . $row['description'] . ' </textarea>
+
+                                <label for="date">DATE</label>
+                                <input type="date" name="date" id="date" class="date" value="' . $valuedate . '" required><br>
+
+                                <div class="sub">
+                                    <input class="submit" type="submit" value="Edit" name="edit">
+                                </div>
+                            </form>
                         </div>
-                        <div class="news-img">
-                            <img src="' . $row['image_path'] . '" alt="" draggable="false" >
-                        </div>
-                        <div class="details">
-                            <h1>' . $row['title'] . '</h1>
-                            <H3> [' . $formattedDate . '] </H3> <br>
-                            <p>' . $row['description'] . '</p>
-                        </div>
-                    </div>';
+                    </div>
+                    <script>
+						// Function to open the modal
+						function edit(id) {
+							var modal = document.getElementById("myModal" + id);
+							modal.style.display = "block";
+						}
+
+						// Function to close the modal
+						function closeModal(id) {
+							var modal = document.getElementById("myModal" + id);
+							modal.style.display = "none";
+						}
+
+						// Close the modal when the user clicks the close button
+						function closeOnClick(id) {
+							var modal = document.getElementById("myModal" + id);
+							modal.style.display = "none";
+						}
+
+						// Close the modal when the user clicks anywhere outside of it
+						window.onclick = function(event) {
+							if (event.target.className === "modal") {
+								event.target.style.display = "none";
+							}
+						}
+					</script>';
 		}
 		return $news;
 	} else {
-		echo "No news found.";
+		echo "<h1>No news found.</h1>";
 		return '';
 	}
 }
@@ -344,7 +402,6 @@ function news()
 			$regDate = new DateTime($row['reg_date']);
 			$formattedDate = $regDate->format('F j, Y'); // Format the date as desired
 
-
 			$news .= '<div class="news">
                         <div class="news-img">
                             <img src="./ADMIN/' . $row['image_path'] . '" alt="news" draggable="false" >
@@ -358,7 +415,7 @@ function news()
 		}
 		return $news;
 	} else {
-		echo "No news found.";
+		echo "<h1> No news found.</h1>";
 		return '';
 	}
 }

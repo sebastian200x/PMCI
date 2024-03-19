@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-<?php 
+<?php
 require './admin/functions.php'
-?>
+    ?>
 <div class="top">
     <header>
         <div class="head-container">
@@ -29,22 +29,17 @@ require './admin/functions.php'
             <div id="sidebar" class="sidebar">
                 <a href="#" class="closebtn" onclick="closeSidebar()">&times;</a>
                 <a href="./index.php">HOME</a>
-                <a href="k12.php">K-12</a>
-                <a href="facilities.php">FACILITIES</a>
-                <a href="policies.php">POLICIES</a>
+                <a href="./k12.php">K-12</a>
+                <a href="./facilities.php">FACILITIES</a>
+                <a href="./policies.php">POLICIES</a>
                 <a href="./about.php">ABOUT</a>
                 <a href="./news.php">NEWS</a>
                 <a href="./contact.php">CONTACT US</a>
             </div>
 
-
-
-
             <h2>PHILIPPINE MALABON CULTURAL INSTITUTE</h2>
-            <img class="header-logo" src="./styles/images/PMCI-LOGO.png" alt=""  draggable="false">
+            <img class="header-logo" src="./styles/images/PMCI-LOGO.png" alt="" draggable="false">
             <a href="./ADMIN/index.php"></a>
-
-
 
         </div>
 
@@ -55,8 +50,6 @@ require './admin/functions.php'
         <div class="nav-container">
             <div class="img-logo">
                 <img src="./styles/images/PMCI-LOGO.png" alt="">
-
-
                 <span>&nbsp菲律賓馬拉邦文化學院</span>
             </div>
 

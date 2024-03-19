@@ -13,13 +13,12 @@
 main {
 
     padding-inline: 50px;
-    
+
     display: flex;
     flex-wrap: wrap;
 }
 
-.title
- {
+.title {
     width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -46,14 +45,15 @@ input[type=date] {
     height: 150px;
     padding: 12px 10px;
     margin-top: 8px;
-  
+
     border: 1px solid #ccc;
     box-sizing: border-box;
-    border-radius: 10px; }
+    border-radius: 10px;
+}
 
 
 
-.form-container{
+.form-container {
     width: 30%;
     display: flex;
     flex-wrap: wrap;
@@ -88,12 +88,12 @@ label {
 
 .submit {
 
-    background-color:#006828;
+    background-color: #006828;
     color: white;
     border: none;
     outline: none;
     padding: 10px 20px;
-    margin-top: 20px ;
+    margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
 
@@ -106,12 +106,12 @@ label {
     background-color: #008332;
     color: rgb(255, 255, 14);
 }
- 
+
 .display {
 
     width: 70%;
-    
-    
+
+
 }
 
 .del {
@@ -133,7 +133,7 @@ label {
     border-radius: 10px;
     cursor: pointer;
     margin: 10px 10px 0 0;
-    
+
 }
 
 .editbtn {
@@ -162,12 +162,12 @@ label {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    
-    
+
+
 
 }
 
-.head{
+.head {
 
     font-size: 70PX;
     width: 100%;
@@ -206,7 +206,7 @@ label {
 
     width: 69%;
     margin-block: 30px;
-    
+
 }
 
 .details h1 {
@@ -219,21 +219,95 @@ label {
 
     font-size: 20px;
     padding: 10PX;
-    
+
     text-align: justify;
 }
 
-.success{
+.success {
     text-align: center;
     color: green;
 }
 
-.error{
+.error {
     color: red;
     text-align: center;
 }
 
-#date{
+#date {
     padding: 15px;
 }
 
+#openModalBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Modal (Background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#myForm input[type="text"],
+#myForm input[type="email"],
+#myForm button {
+    width: 100%;
+    padding-block: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#myForm button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#myForm button:hover {
+    background-color: #45a049;
+}
