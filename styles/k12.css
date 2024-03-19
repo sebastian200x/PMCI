@@ -1,0 +1,79 @@
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.card {
+  width: 28%;
+  border-radius: 8px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 10px 10px 0 0;
+
+}
+
+.intro {
+  height: 80px;
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  background: #006828;
+  bottom: 438px;
+  color: #f0f0f0;
+  transition: 0.4s;
+
+  border-radius: 0 0 10px 10px;
+
+}
+
+.card h1 {
+  margin: 10px;
+  font-size: 40px;
+  color: #f0c033;
+}
+
+.intro p {
+  margin: 10px;
+  font-size: 20px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .intro {
+  height: 300PX;
+  bottom: 438px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.card:hover p {
+  opacity: 1;
+  visibility: visible;
+}
+
+.title h1 {
+  bottom: 720px;
+  padding-top: 50px;
+  text-align: center;
+  color: #006828;
+  font-size: 4vw;
+}
+
+@media screen and (max-width: 900px) {
+
+  .card {
+
+    width: 90%;
+  }
+}

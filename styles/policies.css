@@ -1,0 +1,118 @@
+.grid-container {
+    
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 300px 300px 300px; /*Make the grid smaller than the container*/
+    gap: 150px;
+    background-color: transparent;
+    padding: 50px;
+    display: fixed;
+    
+    
+  }
+  
+  .box2 div {
+    display: fixed;
+    font-weight: bold;
+    border: solid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: transparent;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 30px;
+    border-radius: 15px;
+  }
+
+  .grid-container img{
+    background: fixed;
+    background-size: cover;
+    width: 300px;
+    opacity: 0.6;
+    display: inline-block;
+    opacity: 0;
+    background:rgba(0,0,0,0.6);
+    display:inline-block;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.6s;
+    border-radius: 20px;
+  }
+
+  .grid-container h3{
+    margin-top: 0px;
+    margin-left: 630px;
+    width: 0px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 15px;
+    opacity: 0;
+  }
+
+  .card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+   
+    
+  }
+  .card{
+    width: 500px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px;
+    
+  }
+
+  .card img{
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  .intro{
+    height: 100px;
+    width: 500px;
+    padding: 6px;
+    box-sizing: border-box;
+    background:rgb(1, 75, 1);
+    bottom: 438px;
+    color: #f0f0f0;
+    transition: .4s;
+  }
+  .card h1{
+    margin: 5px;
+    font-size: 28px;
+    color: #f0c033;
+  }
+  p{
+    margin: 10px;
+    font-size: 20px;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .card:hover{
+    cursor: pointer;
+  }
+  .card:hover .intro{
+    height: 200px;
+    bottom: 438px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .card:hover p{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .title h1{
+    
+    bottom: 720px;
+    text-align: center;
+    font-family: sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #225C0E;
+    font-size: 4vw;
+  }
