@@ -33,7 +33,7 @@ label {
 
 }
 
-.button {
+.button-profile {
     background-color: #006828;
     color: white;
     border: none;
@@ -85,4 +85,14 @@ main h1 {
 .error {
     color: red;
     text-align: center;
+}
+
+.back{
+    text-decoration: none;
+    color: #006828;
+}
+
+.back:hover{
+    color: #00973a;
+    
 }

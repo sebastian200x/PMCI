@@ -5,11 +5,12 @@
     <link rel="stylesheet" href="./styles/profile.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <?php include 'header.php'; ?>
     <title>PROFILE</title>
 </head>
 
+<?php include 'header.php'; ?>
 <body>
 
     <main>
@@ -40,6 +41,8 @@
                 }
                 ?>
                 <form action="" method="post" autocomplete="off">
+                    <a href="./home.php" title="Back to news editor" class="back"><i class="fas fa-arrow-left"></i>
+                        Back</a> <br><br>
                     <label for="name">FULL NAME</label><br>
                     <input type="text" name="name" id="name"
                         value="<?php echo isset ($account_info['name']) ? $account_info['name'] : ''; ?>"><br>
@@ -56,7 +59,7 @@
                     <input type="password" name="password" id="password"><br>
 
                     <div class="submit">
-                        <input type="submit" class="button" name="save" value="Update" id="save">
+                        <input type="submit" class="button-profile" name="save" value="Update" id="save">
                     </div>
                 </form>
             </div>

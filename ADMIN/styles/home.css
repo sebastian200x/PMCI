@@ -231,6 +231,11 @@ label {
     text-align: center;
 }
 
+textarea {
+    resize: none; /* Disable resizing */
+    width: 100%; /* Optional: Set a specific width */
+}
+
 #date {
     padding: 15px;
 }

@@ -306,48 +306,50 @@ function getnews()
 			$fetchedDate = $row['reg_date'];
 			$valuedate = date('Y-m-d', strtotime($fetchedDate));
 
-			$news .= '<div class="news">
-							<div class="del">
-								<!-- Edit button -->
-							<form id="myForm' . $row['id'] . '" action="" method="POST">
-							<input type="submit" class="delbtn fas" value="&#xf303; Edit" onclick="edit(' . $row['id'] . ')">
-								<input type="submit" class="editbtn fas" value="&#xf2ed; Delete" name="delete_' . $row['id'] . '" onclick="deleteItem()">
+			$news .= '
+			<form id="myForm' . $row['id'] . '" action="" method="POST">
+				<div class="news">
+					<div class="del">
+						<!-- Edit button -->
+						<input type="button" class="delbtn fas" value="&#xf303; Edit" onclick="edit(' . $row['id'] . ')">
+						<input type="submit" class="editbtn fas" value="&#xf2ed; Delete" name="delete_' . $row['id'] . '"
+							onclick="deleteItem()">
 
-							</div>
-							<div class="news-img">
-								<img src="' . $row['image_path'] . '" alt="Picture not found" draggable="false">
-							</div>
-							<div class="details">
-								<h1>' . $row['title'] . '</h1>
-								<H3> [' . $readabledate . '] </H3> <br>
-								<p>' . $row['description'] . '</p>
-							</div>
+					</div>
+					<div class="news-img">
+						<img src="' . $row['image_path'] . '" alt="Picture not found" draggable="false">
+					</div>
+					<div class="details">
+						<h1>' . $row['title'] . '</h1>
+						<H3> [' . $readabledate . '] </H3> <br>
+						<p>' . $row['description'] . '</p>
+					</div>
+				</div>
+
+				<div id="myModal' . $row['id'] . '" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<span class="close" onclick="closeModal(' . $row['id'] . ')">&times;</span>
+						<h2>Modal Form</h2>
+
+
+						<label for="title">TITLE</label>
+						<input class="title" type="text" name="title" id="title" value="' . $row['title'] . '"
+							placeholder="Title of the News" required><br>
+
+						<label for="description">DESCRIPTION</label>
+						<textarea name="description" class="desc" id="description" placeholder="Description of the News"
+							required>' . $row['description'] . '</textarea>
+
+						<label for="date">DATE</label>
+						<input type="date" name="date" id="date" class="date" value="' . $valuedate . '" required><br>
+
+						<div class="sub">
+							<input class="submit" type="submit" value="Update" name="update_' . $row['id'] . '">
 						</div>
-
-                    <div id="myModal' . $row['id'] . '" class="modal">
-						<!-- Modal content -->
-						<div class="modal-content">
-							<span class="close" onclick="closeModal(' . $row['id'] . ')">&times;</span>
-							<h2>Modal Form</h2>
-                                
-
-                                <label for="title">TITLE</label>
-                                <input class="title" type="text" name="title" id="title" value="' . $row['title'] . '"
-                                    placeholder="Title of the News" required><br>
-
-                                <label for="description">DESCRIPTION</label>
-                                <textarea name="description" class="desc" id="description" placeholder="Description of the News"
-                                    required>' . $row['description'] . '</textarea>
-
-                                <label for="date">DATE</label>
-                                <input type="date" name="date" id="date" class="date" value="' . $valuedate . '" required><br>
-
-                                <div class="sub">
-									<input class="submit" type="submit" value="Update" name="update_' . $row['id'] . '">
-                                </div>
-								</form>
-								</div>
-								</div>
+					</div>
+				</div>
+			</form>
                     <script>
 
 						// Function to open the modal
