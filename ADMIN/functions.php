@@ -379,7 +379,7 @@ function getnews()
 					// Move the uploaded file to the target directory
 					if (move_uploaded_file($newfile["tmp_name"], $targetFile)) {
 						// Update the database with the new image path
-						$sql_update = "UPDATE news SET title='$title', description='$description', reg_date='$date' WHERE id='$id'";
+						$sql_update = "UPDATE news SET image_path = '$targetFile', title='$title', description='$description', reg_date='$date' WHERE id='$id'";
 						if ($mysqli->query($sql_update) === TRUE) {
 							echo "success";
 							header("Location: " . $_SERVER['REQUEST_URI']); // Redirect to the same page
