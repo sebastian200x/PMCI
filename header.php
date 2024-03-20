@@ -1,11 +1,13 @@
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./styles/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./styles/header.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="./styles/images/favicon.ico" type="image/x-icon">
 
 <?php
-require './admin/functions.php'
+require './admin/functions.php';
+
+$currentPage = basename($_SERVER['PHP_SELF']);
     ?>
 <div class="top">
     <header>
@@ -53,8 +55,8 @@ require './admin/functions.php'
             </div>
 
             <div class="navi">
-                <a class="hover" href="./index.php">Home</a>
-                <ul class="hover name">
+                <a class="hover <?php echo ($currentPage == 'index.php') ? 'active' : ''; ?>" href="./index.php">Home</a>
+                <ul class="hover name <?php echo ($currentPage == 'k12.php' || $currentPage == 'facilities.php' || $currentPage == 'policies.php') ? 'active' : ''; ?>">
                     <li class="menu-item">
                         <a class="text" href="#">Academics</a>
                         <ul class="drop-menu">
@@ -71,9 +73,9 @@ require './admin/functions.php'
                     </li>
                 </ul>
 
-                <a class="hover" href="./about.php">About</a>
-                <a class="hover" href="./news.php">News</a>
-                <a class="hover" href="./contact.php">Contact Us</a>
+                <a class="hover <?php echo ($currentPage == 'about.php') ? 'active' : ''; ?>" href="./about.php">About</a>
+                <a class="hover <?php echo ($currentPage == 'news.php') ? 'active' : ''; ?>" href="./news.php">News</a>
+                <a class="hover <?php echo ($currentPage == 'contact.php') ? 'active' : ''; ?>" href="./contact.php">Contact Us</a>
 
 
 

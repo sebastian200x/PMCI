@@ -154,6 +154,12 @@ nav a {
     display: none;
 }
 
+.active {
+    border: 2px solid black;
+    border-radius: 40px;
+    color: #047e45;
+}
+
 
 
 
