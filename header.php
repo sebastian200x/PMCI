@@ -58,7 +58,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <a class="hover <?php echo ($currentPage == 'index.php') ? 'active' : ''; ?>" href="./index.php">Home</a>
                 <ul class="hover name <?php echo ($currentPage == 'k12.php' || $currentPage == 'facilities.php' || $currentPage == 'policies.php') ? 'active' : ''; ?>">
                     <li class="menu-item">
-                        <a class="text" href="#">Academics</a>
+                        <a href="#" class="menu-link">Academics</a>
                         <ul class="drop-menu">
                             <li class="drop-menu-item">
                                 <a href="k12.php">K12</a>
