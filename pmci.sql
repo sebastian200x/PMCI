@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 20, 2024 at 12:40 AM
+-- Generation Time: Mar 20, 2024 at 08:47 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 --
 
 INSERT INTO `account` (`id`, `username`, `password`, `email`, `name`) VALUES
-(1, 'admin', '$2y$10$IIRit1a9NSWy0I6QBG4fW.w0aF2yqLyFrK6DgDxPIF8vn7gsrcykS', 'a@a.comasdasdasdas', 'adminaasd'),
+(1, 'admin', '$2y$10$IIRit1a9NSWy0I6QBG4fW.w0aF2yqLyFrK6DgDxPIF8vn7gsrcykS', 'a@a.comasdasdasdas', 'isa kaasd asd asdf asdasd'),
 (2, '$username', '$2y$10$2h6kZnSjT5fYOTitENu5Yus4KhbT/QszZSqhF59wu7pXjPmBppRje', '$email', '$name'),
 (3, 'admin3', '$2y$10$OvlrzTV5IzZy1Ier7YsR2OY1dpmm7XFqQOjb2aTTqqUyn37WKI7pC', 'admin2@gmail.com', 'name'),
 (4, 'admin5', '$2y$10$h8bkXs0UMW5rkmgr17Jveu.gYzKUQQykVpCvmFDJsuyOCUfzmMSiu', 'admin5@gmail.com', 'name'),
@@ -64,17 +64,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `reg_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `image_path`, `title`, `description`, `reg_date`) VALUES
-(1, 'newspics/NIASDNASDIASNIASNDINASNAS.png', 'CHAMPION ATA TO', 'A', '2024-03-21 00:00:00'),
-(5, 'newspics/CentralOffice.jpg', 'Central Office', 'Basta office to', '2024-03-19 00:00:00'),
-(7, 'newspics/asdasd.jpg', 'asdasd', 'asdasdasd', '2024-02-27 00:00:00'),
-(8, 'newspics/asdasd.png', 'asdasd', 'asdasdasd', '2024-02-27 00:00:00');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

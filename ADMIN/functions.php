@@ -423,7 +423,7 @@ function getnews()
 				}
 			}
 
-			if (isset ($_POST['delete_' . $row['id']])) {
+			if (isset ($_POST['delete_' . $row['id']]) && isset ($_POST['confirm'])) {
 				$id = $row['id'];
 				$todelete = $row['image_path'];
 				unlink($todelete);
