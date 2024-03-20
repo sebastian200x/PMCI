@@ -16,7 +16,7 @@
 
         <div class="form">
             <h5><a class="back" href="../index.php">
-                    < Back</a>
+                    < Home</a>
             </h5>
             <H1>PMCI LOGIN</H1>
 

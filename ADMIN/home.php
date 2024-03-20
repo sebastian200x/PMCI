@@ -26,6 +26,9 @@
                     $uploadResult = uploadImage($_FILES["image"], $_POST["title"], $_POST["description"], $_POST["date"]);
                     if ($uploadResult == "success") {
                         echo '<p class="success"> <i class="fas fa-check"></i> News updated successfully</p>';
+                        $_POST['title'] = '';
+                        $_POST['description'] = '';
+                        $_POST['date'] = '';
                     } else {
                         echo '<p class="error"> <i class="fas fa-times"></i> ' . @$uploadResult . '</p>';
                     }

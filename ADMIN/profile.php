@@ -11,12 +11,14 @@
 </head>
 
 <?php include 'header.php'; ?>
+
 <body>
 
     <main>
         <div class="profile-container">
             <div class="profile">
                 <?php
+
 
                 if (!isset ($_SESSION['admin'])) {
                     header('location: ./index.php');
@@ -36,7 +38,7 @@
                     if ($editinfo == "success") {
                         echo '<p class="success"> <i class="fas fa-check"></i> Profile Updated Successfully</p>';
                     } else {
-                        echo '<p class="error"> <i class="fas fa-times"></i> ' . $account_info . '</p>';
+                        echo '<p class="error"> <i class="fas fa-times"></i> ' . @$account_info . '</p>';
                     }
                 }
                 ?>
