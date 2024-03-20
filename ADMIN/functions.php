@@ -192,8 +192,6 @@ function uploadImage($file, $title, $description, $date)
 
 	$targetDir = "newspics/";
 	$imageFileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
-	$titlewospaces = str_replace(' ', '', $title);
-	$newFileName = $titlewospaces . '.' . $imageFileType;
 
 	// Get the last inserted ID and increment by one for the new ID
 	$sql = "SELECT MAX(id) AS last_id FROM news FOR UPDATE";
@@ -204,6 +202,9 @@ function uploadImage($file, $title, $description, $date)
 	// Rename the file using the new ID
 	$targetFile = $targetDir . $newID . '.' . $imageFileType;
 
+	if (!file_exists($targetDir)) {
+		mkdir($targetDir, 0777, true); // Create directory if it doesn't exist
+	}
 	// Check if image file is an actual image or fake image
 	$check = getimagesize($file["tmp_name"]);
 	if ($check === false) {
@@ -359,36 +360,55 @@ function getnews()
 					if (!file_exists($targetDir)) {
 						mkdir($targetDir, 0777, true); // Create directory if it doesn't exist
 					}
+
 					if (!is_writable($targetDir)) {
 						echo "Error: Target directory is not writable.";
 						exit();
 					}
-
-					// Remove the old picture from the directory
-					$oldImagePath = $row['image_path'];
-					if (file_exists($oldImagePath)) {
-						unlink($oldImagePath);
-					}
-
-					// Check for file upload errors
-					if ($newfile["error"] !== UPLOAD_ERR_OK) {
-						echo "Error uploading file: " . $newfile["error"];
-						exit();
-					}
-
-					// Move the uploaded file to the target directory
-					if (move_uploaded_file($newfile["tmp_name"], $targetFile)) {
-						// Update the database with the new image path
-						$sql_update = "UPDATE news SET image_path = '$targetFile', title='$title', description='$description', reg_date='$date' WHERE id='$id'";
-						if ($mysqli->query($sql_update) === TRUE) {
-							echo "success";
-							header("Location: " . $_SERVER['REQUEST_URI']); // Redirect to the same page
-							exit();
-						} else {
-							echo "Error updating record: " . $mysqli->error;
-						}
+					// Check if image file is an actual image or fake image
+					$check = getimagesize($newfile["tmp_name"]);
+					if ($check === false) {
+						echo "<p class='error'><i class='fas fa-times'></i> File is not an image.</p>";
 					} else {
-						echo "Error moving uploaded file: " . error_get_last()['message'];
+						// Delete the old image from the directory
+						$oldImagePath = $row['image_path'];
+						if (file_exists($oldImagePath)) {
+							unlink($oldImagePath);
+						}
+						// Check if file already exists
+						if (file_exists($targetFile)) {
+							echo "<p class='error'><i class='fas fa-times'></i> Sorry, file already exists.</p>";
+						} else {
+							// Check file size, 25mb max
+							if ($newfile["size"] > 25 * 1024 * 1024) {
+								echo "<p class='error'><i class='fas fa-times'></i> Sorry, your file is too large. Please upload up to 25mb only.</p>";
+							} else {
+
+								// Allow certain file formats
+								$allowedFormats = array("jpg", "jpeg", "png", "webp");
+								if (!in_array($imageFileType, $allowedFormats)) {
+									echo "<p class='error'><i class='fas fa-times'></i> Sorry, only WEBP, JPG, JPEG & PNG files are allowed.</p>";
+								} else {
+
+									// Move the uploaded file to the target directory
+									if (move_uploaded_file($newfile["tmp_name"], $targetFile)) {
+										// Remove the old picture from the directory
+
+										// Update the database with the new image path
+										$sql_update = "UPDATE news SET image_path = '$targetFile', title='$title', description='$description', reg_date='$date' WHERE id='$id'";
+										if ($mysqli->query($sql_update) === TRUE) {
+											echo "<p class='success'> <i class='fas fa-check'></i> News updated successfully</p>";
+											header("Location: " . $_SERVER['REQUEST_URI']); // Redirect to the same page
+											exit();
+										} else {
+											return "Error updating database: " . $mysqli->error;
+										}
+									} else {
+										return "Error moving picture: " . error_get_last()['message'];
+									}
+								}
+							}
+						}
 					}
 				} else {
 					// Process the edited news data and update the database without changing the image

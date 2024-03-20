@@ -60,7 +60,6 @@
 
         <div class="display">
             <div class="news-container">
-
                 <?php
                 $news = getnews();
                 echo $news;
