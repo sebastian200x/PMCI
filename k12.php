@@ -9,6 +9,7 @@
 </head>
 
 <?php include 'header.php'; ?>
+
 <body>
     <main>
 
@@ -60,7 +61,7 @@
             </div>
 
             <div class="card">
-                <img src="./styles/images/map.png">
+                <img src="./styles/images/k12/g4.jpg">
                 <div class="intro">
                     <h1>Grade 4</h1>
                     <p>Children take on more complex tasks. They engage in more difficult reading and math exercises,
@@ -70,7 +71,7 @@
             </div>
 
             <div class="card">
-                <img src="./styles/images/map.png">
+                <img src="./styles/images/k12/g5.png">
                 <div class="intro">
                     <h1>Grade 5</h1>
                     <p>this level presents bigger challenges. Children take on harder reading and math activities, and
@@ -78,6 +79,84 @@
                         concepts and explore deeper into history.</p>
                 </div>
             </div>
+
+            <div class="card">
+                <img src="./styles/images/k12/g6.jpg">
+                <div class="intro">
+                    <h1>Grade 6</h1>
+                    <p>At this stage, children are gearing up for high school. They engage in the most challenging
+                        reading and math activities, and learn about important people and events in history. They also
+                        start to learn about civics and economics.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./styles/images/k12/g7.PNG">
+                <div class="intro">
+                    <h1>Grade 7</h1>
+                    <p>In Grade 7, students enter
+                        the first year of high school and embark on an academic journey filled with advanced topics. It
+                        is a time of transition, where students build upon their foundational knowledge and develop
+                        critical thinking and problem-solving skills.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./styles/images/k12/g8.jpg">
+                <div class="intro">
+                    <h1>Grade 8</h1>
+                    <p>In the second year of high school, students seek deeper into their studies. Grade 8 is a critical
+                        stage where students refine their analytical skills and expand their understanding of various
+                        subjects. They also begin to explore potential career paths and develop a sense of personal
+                        responsibility.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./styles/images/k12/g9.png">
+                <div class="intro">
+                    <h1>Grade 9</h1>
+                    <p>In the third year of high school, students focus on developing critical thinking, research, and
+                        communication skills, while exploring their interests and preparing for higher education.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./styles/images/k12/g10.png">
+                <div class="intro">
+                    <h1>Grade 10</h1>
+                    <p>The final year of secondary education, Grade 10 is a pivotal stage in a student's academic
+                        journey. Students engage in more advanced and specialized subjects, preparing them for higher
+                        education or future career paths. Also, serves as a bridge between secondary education and the
+                        next chapter of their educational pursuits.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./styles/images/k12/g11.jpg">
+                <div class="intro">
+                    <h1>Grade 11</h1>
+                    <p>Grade 11 marks a pivotal point in a student's academic journey, where they choose a specific
+                        strand aligned with their interests, explore subjects and career paths, and begin to understand
+                        their strengths and aspirations for future career pathways.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./styles/images/k12/g12.jpg">
+                <div class="intro">
+                    <h1>Grade 12</h1>
+                    <p>Grade 12 marks the pinnacle of high school, signifying a period of reflection and transition.
+                        It's a time when students wrap up their high school journey and look ahead to the next chapter
+                        of their lives. With college applications underway, entrance exams looming, and crucial
+                        decisions to make about future academic paths.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </main>
     <?php include 'footer.php'; ?>

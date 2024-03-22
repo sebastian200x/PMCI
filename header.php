@@ -56,11 +56,15 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                             <li class="drop-menu-item">
                                 <a href="k12.php">K12</a>
                             </li>
+                            
                             <li class="drop-menu-item">
                                 <a href="facilities.php">FACILITIES</a>
                             </li>
                             <li class="drop-menu-item">
                                 <a href="policies.php">POLICIES</a>
+                            </li>
+                            <li class="drop-menu-item">
+                                <a href="enrollment.php">ENROLLMENT</a>
                             </li>
                         </ul>
                     </li>

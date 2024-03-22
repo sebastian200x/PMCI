@@ -187,9 +187,6 @@ function uploadImage($file, $title, $description, $date)
 		return false;
 	}
 
-	// Start a transaction
-	$mysqli->begin_transaction();
-
 	$targetDir = "newspics/";
 	$imageFileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
 
@@ -205,26 +202,24 @@ function uploadImage($file, $title, $description, $date)
 	if (!file_exists($targetDir)) {
 		mkdir($targetDir, 0777, true); // Create directory if it doesn't exist
 	}
+
 	// Check if image file is an actual image or fake image
 	$check = getimagesize($file["tmp_name"]);
 	if ($check === false) {
-		$mysqli->rollback(); // Rollback the transaction
 		return "File is not an image.";
 	}
+
 	// Check if file already exists
 	if (file_exists($targetFile)) {
-		$mysqli->rollback(); // Rollback the transaction
 		return "Sorry, file already exists.";
 	}
 	// Check file size, 25mb max
 	if ($file["size"] > 25 * 1024 * 1024) {
-		$mysqli->rollback(); // Rollback the transaction
 		return "Sorry, your file is too large. Please upload up to 25mb only";
 	}
 	// Allow certain file formats
 	$allowedFormats = array("jpg", "jpeg", "png", "webp");
 	if (!in_array($imageFileType, $allowedFormats)) {
-		$mysqli->rollback(); // Rollback the transaction
 		return "Sorry, only WEBP, JPG, JPEG & PNG files are allowed.";
 	}
 
@@ -238,14 +233,11 @@ function uploadImage($file, $title, $description, $date)
 		$result = $stmt->affected_rows;
 		if ($result > 0) {
 			$mysqli->commit(); // Commit the transaction
-			$stmt->close();
 			return "success";
 		} else {
-			$mysqli->rollback(); // Rollback the transaction
 			return "Sorry, there was an error uploading the news.";
 		}
 	} else {
-		$mysqli->rollback(); // Rollback the transaction
 		return "Sorry, there was an error uploading your file.";
 	}
 }
@@ -423,7 +415,7 @@ function getnews()
 				}
 			}
 
-			if (isset ($_POST['delete_' . $row['id']]) && isset ($_POST['confirm'])) {
+			if (isset ($_POST['delete_' . $row['id']])) {
 				$id = $row['id'];
 				$todelete = $row['image_path'];
 				unlink($todelete);

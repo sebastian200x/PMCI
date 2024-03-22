@@ -6,8 +6,10 @@
 
     <div class="set">
         <form action="" method="POST">
+            <input type="submit" class="button" name="news" value="NEWS">
+            <input type="submit" class="button" name="enrollment" value="ENROLLMENT">
             <input type="submit" class="button" name="profile" value="PROFILE">
-            <input type="submit" class="button" name="logout" value="LOGOUT" onclick="return confirmLogout()">
+            <input type="submit" class="button2" name="logout" value="LOGOUT" onclick="return confirmLogout()">
         </form>
     </div>
 
@@ -16,6 +18,16 @@
 
     if (isset ($_POST['profile'])) {
         header('Location: ./profile.php');
+        exit();
+    }
+
+    if (isset ($_POST['news'])) {
+        header('Location: ./home.php');
+        exit();
+    }
+
+    if (isset ($_POST['enrollment'])) {
+        header('Location: ./enrollment.php');
         exit();
     }
 

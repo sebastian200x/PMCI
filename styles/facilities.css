@@ -9,6 +9,7 @@
 
 .card {
     width: 28%;
+    
     background-color: #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
@@ -26,7 +27,7 @@
 }
 
 .intro {
-    height: auto;
+    min-height: 180px;
     width: 100%;
     padding: 6px;
     box-sizing: border-box;
@@ -50,9 +51,10 @@
 p {
     margin-inline: 10px;
     font-size: 20px;
-    display: none;
+    text-align: justify;
+   
 }
-
+/* 
 .card:hover {
     cursor: pointer;
 }
@@ -66,7 +68,7 @@ p {
 .card:hover p {
 
     display: block;
-}
+} */
 
 .title h1 {
 
@@ -90,3 +92,13 @@ p {
         width: 90%;
     }
 }
+
+@media screen and (max-width: 900px) {
+
+    p {
+
+        font-size: 15px;
+        
+    }
+}
+

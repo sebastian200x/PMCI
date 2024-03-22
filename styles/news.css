@@ -4,9 +4,15 @@
 
     display: flex;
     flex-wrap: wrap;
+    
 
 
 
+}
+
+main {
+
+    min-height: 80dvh;
 }
 
 .head {
@@ -18,10 +24,11 @@
 
 }
 
+
 .news {
 
     width: 100%;
-
+    
     display: flex;
     flex-wrap: wrap;
 

@@ -39,3 +39,15 @@ header a{
     background-color: #008332;
     color: white;
 }
+
+.set .button2 {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    color: rgb(255, 255, 14);
+    background-color: #006828;
+    font-size: 20px;
+    padding-inline: 20px;
+    padding-block: 10px;
+}

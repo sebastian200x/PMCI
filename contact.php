@@ -27,7 +27,8 @@
 
         <div class="link">
             <h3 class="link">CLICK <a
-                    href="https://www.google.com/maps/place/Philippine+Malabon+Cultural+Institute/@14.657183,120.9568965,19z/data=!4m10!1m2!2m1!1spmci!3m6!1s0x3397b44c9666a829:0x420312031c521a6a!8m2!3d14.6574728!4d120.9574308!15sCgRwbWNpkgEGc2Nob29s4AEA!16s%2Fg%2F1td6vn5y?entry=ttu">HERE</a>
+                    href="https://www.google.com/maps/place/Philippine+Malabon+Cultural+Institute/@14.657183,120.9568965,19z/data=!4m10!1m2!2m1!1spmci!3m6!1s0x3397b44c9666a829:0x420312031c521a6a!8m2!3d14.6574728!4d120.9574308!15sCgRwbWNpkgEGc2Nob29s4AEA!16s%2Fg%2F1td6vn5y?entry=ttu"
+                    target="_blank">HERE</a>
                 FOR GOOGLE MAPS LINK</h3>
         </div>
 
