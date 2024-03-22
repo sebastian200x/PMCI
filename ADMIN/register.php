@@ -103,6 +103,18 @@
                                } ?>">
                     </div>
                 </div>
+                <!-- <script>
+                    var p1 = document.getElementById('password');
+                    var p2 = document.getElementById('confirm-password');
+
+                    p2.oninput = function () {
+                        if (p1.value != p2.value) {
+                            p2.className = "text-box wrong";
+                        } else {
+                            p2.className = "text-box";
+                        }
+                    }
+                </script> -->
 
                 <div class="baba">
                     <input class="button" type="submit" name="register" value="REGISTER"><br>
