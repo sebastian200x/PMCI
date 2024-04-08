@@ -1,0 +1,68 @@
+.about-container {
+
+    margin-inline: 40px;
+}
+
+.title{
+
+    text-align: center;
+    font-size: 3VW;
+    
+
+    margin-top: 20px;
+}
+
+.hist {
+    margin-block: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.img-cont {
+
+    width: 29%;
+}
+
+.img-cont img {
+
+    width: 100%;
+}
+
+.desc {
+
+    width: 70%;
+    text-align: justify;
+
+    
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+    .img-cont {
+
+        width: 100%;
+    }
+
+    .desc {
+
+        width: 100%;
+    }
+
+    .title {
+
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    
+    .title {
+
+        font-size: 30px;
+    }
+}

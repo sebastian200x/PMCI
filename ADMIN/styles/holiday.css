@@ -1,0 +1,115 @@
+nav {
+    padding-inline: 50px;
+}
+
+.navi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 2px solid #006828;
+}
+
+.navi a {
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: black;
+    border-radius: 7px 7px 0 0;
+    font-size: 20px;
+}
+
+.navi a:hover {
+    background-color: #006828;
+    color: white;
+}
+
+.navi .active {
+    background-color: #006828;
+    color: white;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+.holiday {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttonz {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.buttonz input, button {
+    margin: 10px;
+    background-color: #006828;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.form {
+    background-color: #c2c2c2;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+table {
+    border: 1px solid black;
+    padding: 10px;
+    margin-block: 10px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.del {
+    margin: 10px;
+    background-color: rgb(180, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.TAAS {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.textbox {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.textbox1 {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 15px;
+    cursor: pointer;
+}

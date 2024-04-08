@@ -1,0 +1,288 @@
+ /* Chrome, Safari, Edge, Opera */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+
+ /* Firefox */
+ input[type=number] {
+     -moz-appearance: textfield;
+ }
+
+ input {
+     text-transform: uppercase;
+ }
+
+ main {
+
+     min-height: 80dvh;
+ }
+
+ .title,
+ .h1 {
+
+     text-align: center;
+     margin-block: 10px;
+     font-size: 50px;
+ }
+
+ button {
+     height: 50px;
+     padding: 10px;
+     border-radius: 10px;
+ }
+
+ .form-container {
+
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .half .row {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     margin-bottom: 10px;
+ }
+
+ .half .col {
+     width: calc(50% - 15px);
+     /* Adjust width to take 50% with spacing */
+ }
+
+ .half .col label {
+     display: block;
+     width: 100%;
+     font-weight: bold;
+ }
+
+ .half .col input,
+ select {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     box-sizing: border-box;
+     margin-top: 5px;
+ }
+
+ .full {
+     width: 100%;
+     margin-bottom: 10px;
+ }
+
+ .full label {
+     width: 100%;
+ }
+
+ .full input {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     box-sizing: border-box;
+     margin-top: 5px;
+ }
+
+ .row-custom {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 10px;
+ }
+
+ .column-custom {
+     width: calc(33.33% - 10px);
+     /* Subtracting margin to avoid wrapping */
+ }
+
+ .label-custom {
+     display: block;
+     margin-bottom: 5px;
+ }
+
+ .input-custom {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     border-radius: 10px;
+
+ }
+
+ .form-flex {
+
+     background-color: #cccccc;
+     border-radius: 8px;
+     padding: 10px;
+     width: 1000px;
+
+     margin-bottom: 30px;
+ }
+
+ .form-flex h1 {
+
+     font-size: 20px;
+
+     color: #006828;
+ }
+
+ .block {
+
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: flex-start;
+
+ }
+
+ .block input {
+
+     width: 33%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     border-radius: 10px;
+ }
+
+ .block label {
+
+     width: 15%;
+     padding: 12px 10px;
+     margin: 8px 0;
+     display: inline-block;
+     text-align: right;
+
+ }
+
+ .block select {
+
+     width: 33%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     border-radius: 10px;
+ }
+
+ .req {
+
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ .check label {
+
+     width: 80%;
+     padding: 12px 10px;
+     margin: 8px 0;
+     display: inline-block;
+     text-align: center;
+
+ }
+
+
+
+ .check {
+
+     border: 1px solid black;
+     width: 30%;
+     border-radius: 10px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+
+     margin: 10px;
+
+ }
+
+ .submit {
+
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ .submit .checkAppointment,
+ .submit .enroll {
+
+     height: 60px;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     border-radius: 15px;
+     cursor: pointer;
+
+
+ }
+
+ .checkAppointment:hover,
+ .submit .enroll:hover {
+
+     background-color: #006828;
+     color: rgb(255, 255, 14);
+ }
+
+ .calendar {
+
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-evenly;
+     align-items: center;
+     margin-bottom: 30px;
+ }
+
+ .date,
+ .time {
+
+     text-align: center;
+     width: 35%;
+
+
+ }
+
+ .date input {
+
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     border-radius: 10px;
+ }
+
+ .time select {
+
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     border-radius: 10px;
+ }
+
+
+
+
+ @media screen and (max-width: 600px) {
+
+    
+
+     .column-custom  {
+
+        width: 100%;
+     }
+
+ }

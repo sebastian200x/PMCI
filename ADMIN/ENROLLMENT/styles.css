@@ -1,0 +1,248 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+nav {
+
+    padding-inline: 50px;
+}
+
+.navi {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 2px solid #006828;
+}
+
+.navi a {
+
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    text-decoration: none;
+
+    color: black;
+    border-radius: 7px 7px 0 0;
+    font-size: 20px;
+}
+
+.navi a:hover {
+
+    background-color: #006828;
+    color: white;
+}
+
+.navi .active {
+    background-color: #006828;
+    color: white;
+}
+
+.enroll {
+
+    padding-inline: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.grade {
+
+    width: 15%;
+    padding-block: 10px;
+    background-color: #006828;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+}
+
+.grade a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #008332;
+    width: 60%;
+    text-align: center;
+    margin: 10px;
+    border-radius: 7px;
+}
+
+.grade a:hover {
+
+    background-color: #01bb48;
+    color: rgb(255, 255, 14);
+    ;
+}
+
+.tbl {
+
+    width: 80%;
+
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    border-radius: 7px
+}
+
+.table {
+
+    width: 80%;
+}
+
+.table table {
+
+    text-align: center;
+    width: 100%;
+}
+
+th {
+
+    font-size: 20px;
+    padding: 10px;
+}
+
+td {
+
+    padding: 5px;
+}
+
+.view {
+
+    width: 80px;
+    background-color: #006828;
+    color: #fff;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.view:hover {
+
+    background-color: #009639;
+    color: rgb(255, 255, 14);
+}
+
+.grade .active {
+
+    background-color: #01bb48;
+    color: rgb(255, 255, 14);
+    ;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.flex {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#enrollmentDetails {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    padding: 20px;
+}
+
+.one {
+
+    width: 25%;
+    line-height: 30px;
+}
+
+.btns {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.app,
+.can {
+
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 10px;
+
+    padding: 10px 20px;
+}
+
+.app {
+
+    background-color: #006828;
+    color: white;
+}
+
+.can {
+
+    background-color: #818181;
+    color: white;
+}
+
+.app:hover {
+
+    background-color: #248f4d;
+}
+
+.can:hover {
+
+    background-color: #636363;
+}

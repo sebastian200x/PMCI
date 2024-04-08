@@ -1,0 +1,97 @@
+main {}
+
+.heading {
+
+    text-align: center;
+    margin-block: 20px;
+
+
+}
+
+.heading p {
+
+    font-size: 20px;
+
+
+}
+
+.map {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+
+}
+
+.map {
+
+    width: 100%;
+
+}
+
+.map img {
+
+    border: 2px solid black;
+}
+
+.link {
+
+    text-align: center;
+    margin: 20px;
+}
+
+.contacts {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-inline: 40px;
+    margin-bottom: 30px;
+}
+
+.card {
+
+    width: 25%;
+    background-color: #999999;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+
+
+}
+
+.socials {
+
+    width: 25%;
+    background-color: #999999;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    text-decoration: none;
+
+}
+
+.card h2,
+.socials h2 {
+
+    text-align: center;
+    color: white;
+
+}
+
+.socials h3 {
+
+    margin-block: 5px;
+    
+}
+.socials a {
+    text-decoration: none;
+    color: black;
+}
+
+.data {
+
+    padding: 60px;
+}

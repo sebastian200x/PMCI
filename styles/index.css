@@ -1,0 +1,318 @@
+body {
+    height: 100%;
+}
+
+.welc {
+    text-align: center;
+    margin-inline: 40px;
+
+}
+
+.welc h1 {
+    margin-inline: 20px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-size: 4vw;
+}
+
+.img-cont {
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img {
+
+    width: 100%;
+    position: relative;
+
+}
+
+.img img {
+
+    width: 100%;
+    display: block;
+}
+
+.desc {
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+
+}
+
+.desc:hover {
+    opacity: 1;
+}
+
+.desc h1 {
+    color: rgb(255, 255, 14);
+    font-size: 70px;
+    text-align: center;
+
+}
+
+.desc p {
+    color: white;
+    text-align: center;
+    width: 70%;
+    font-size: 20px;
+}
+
+
+
+
+
+
+.cont {
+
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    transition: 0.6s;
+
+}
+
+
+
+.mv {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    padding-inline: 40px;
+}
+
+.card {
+    background-color: #006828;
+
+    width: 40%;
+    min-height: 270px;
+    margin: 50px 0;
+    border-radius: 20px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+.card p {
+
+    color: white;
+    margin: 20px 30px;
+    line-height: 1.8;
+    font-size: 1vw;
+    text-align: justify;
+}
+
+.card h1 {
+    color: rgb(255, 255, 14);
+    text-align: center;
+    font-size: 2.5vw;
+    margin: 5px 20px;
+
+}
+
+.mobile {
+    display: none;
+}
+
+.mob {
+    display: none;
+}
+
+.core {
+
+    margin-inline: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+
+
+}
+
+.pmci {
+
+    width: 20%;
+    background-color: #dadada;
+    color: #006828;
+    text-align: center;
+    border-radius: 10px;
+    padding-inline: 20px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.pmci img {
+
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+.card img {
+
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+
+
+}
+
+.core-values {
+
+    margin-inline: 40px;
+    text-align: center;
+    font-size: 3vw;
+    margin-bottom: 20px;
+
+
+}
+
+
+
+@media screen and (max-width: 1266px) {
+
+    .desc h1 {
+
+        font-size: 50px;
+    }
+
+    .desc p {
+
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 1111px) {
+
+    .pmci {
+
+        width: 38%;
+        margin-bottom: 30px;
+    }
+
+    .core {
+
+        justify-content: space-evenly;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .mv {
+
+        justify-content: center;
+    }
+
+
+    .card {
+
+        width: 70%;
+        justify-content: center;
+        margin: 30px 0;
+
+        height: auto;
+    }
+
+    .card h1 {
+
+        font-size: 5vw;
+    }
+
+    .card p {
+
+        font-size: 2vw;
+        text-align: justify;
+    }
+
+    .mobile {
+        display: block;
+        margin-block: 8px;
+        font-size: 40px;
+    }
+
+    .desc h1 {
+
+        display: none;
+    }
+
+    .desc p {
+
+        display: none;
+    }
+
+    .mob {
+
+        display: block;
+        color: rgb(255, 255, 14);
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .pmci {
+        width: 20%;
+    }
+
+    .card {
+
+        width: 90%;
+
+        margin: 30px 0;
+
+        height: auto;
+    }
+
+
+    .welc h3 {
+
+        font-size: 6vw;
+    }
+
+    .core {
+
+        justify-content: center;
+    }
+
+    .pmci {
+
+        width: 50%;
+        margin-block: 10px;
+    }
+
+    .pmci h3 {
+
+        font-size: 20px;
+    }
+}

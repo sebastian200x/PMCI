@@ -1,0 +1,100 @@
+nav {
+
+    padding-inline: 50px;
+}
+
+.navi {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 2px solid #006828;
+}
+
+.navi a {
+
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    text-decoration: none;
+
+    color: black;
+    border-radius: 7px 7px 0 0 ;
+    font-size: 20px;
+}
+
+.navi a:hover {
+
+    background-color: #006828;
+    color: white;
+}
+
+.navi .active {
+    background-color: #006828;
+    color: white;
+}
+
+.enroll {
+
+    padding-inline: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.grade {
+
+    width: 15%;
+    padding-block: 10px;
+    background-color: #006828;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+.grade a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #008332;
+    width: 60%;
+    text-align: center;
+    margin: 10px;
+    border-radius: 7px;
+    height: 30px;
+}
+
+.grade a:hover {
+
+    background-color: #01bb48;
+    color: rgb(255, 255, 14);;
+}
+
+.tbl {
+
+    width: 85%;
+    height: 80dvh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.tbl p {
+
+    font-size: 30px;
+}
+

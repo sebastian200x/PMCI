@@ -1,0 +1,113 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #bbbbbb;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+label {
+
+    font-size: 20px;
+}
+
+.submit {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+
+}
+
+.pass {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+}
+
+.pass1 {
+    width: 49%;
+}
+
+.pass2 {
+    width: 49%;
+}
+
+.button-profile {
+    background-color: #006828;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+main {
+
+    padding-inline: 50px;
+
+}
+
+.profile-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+
+    width: 50%;
+    height: auto;
+    background-color: #cacaca;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 20px;
+}
+
+main h1 {
+
+    text-align: center;
+    margin-top: 20px;
+}
+
+.success {
+    text-align: center;
+    color: green;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.back {
+    text-decoration: none;
+    color: #006828;
+}
+
+.back:hover {
+    color: #00973a;
+
+}

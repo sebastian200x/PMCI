@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.top {
+    width: 100%;
+}
+
+.body {
+    min-height: 100vh;
+}
+
+header {
+    background-color: #006828;
+    height: AUTO;
+    padding: .5px;
+    color: rgb(255, 255, 14);
+}
+
+.head-container {
+    margin-inline: 40px;
+    margin-block: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head-container h2 {
+    letter-spacing: 1px;
+}
+
+
+
+.img-logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-block: 30px;
+}
+
+.img-logo img {
+    width: 70px;
+    height: 70px;
+}
+
+nav {
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+
+.nav-container {
+    margin-inline: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container span {
+    font-weight: 600;
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+.navi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    
+}
+
+#menu {
+    display: none;
+}
+
+.header-logo {
+    display: none;
+}
+
+.hover:hover {
+    border: 2px solid black;
+    border-radius: 40px;
+    color: #047e45;
+}
+
+.hover {
+    padding-inline: 20px;
+    padding-block: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 40px;
+    margin-inline: 10px;
+}
+
+.hover .menu-item .menu-link {
+    color: black;
+}
+
+.hover:hover .menu-item .menu-link {
+    color: #047e45;
+}
+
+.sidebar {
+    display: none;
+}
+
+.active {
+    border: 2px solid black;
+    border-radius: 40px;
+    color: #047e45;
+}
+
+.active .menu-item .menu-link {
+    color: #047e45;
+}
+
+@media screen and (max-width: 1470px) {
+    .img-logo {
+        display: none;
+    }
+
+    .nav-container {
+        justify-content: center;
+        padding-block: 15px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    nav {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+        font-size: 30px;
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgba(8, 41, 21, 0.918);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 20px;
+        color: rgb(255, 255, 14);
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .open-sidebar {
+        width: 250px;
+    }
+
+    .close-sidebar {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .head-container h2 {
+        display: none;
+        justify-content: flex-end;
+    }
+
+    .header-logo {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.drop-menu {
+    list-style-type: none;
+}
+
+.menu-item {
+    display: inline-block;
+    position: relative;
+    z-index: 999;
+}
+
+.menu-item a {
+    text-decoration: none;
+    display: block;
+}
+
+.drop-menu {
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 0 2px 5px 0 rgba(12, 12, 12, 0.5), 0 0px 10px 0;
+    background-color: #fff;
+    margin-top: 16PX;
+}
+
+.drop-menu-item {
+    padding: 10px;
+}
+
+.drop-menu-item:hover {
+    background-color: rgb(201, 198, 198);
+}
+
+.drop-menu-item a {
+    color: #555;
+}
+
+.name:hover .drop-menu {
+    display: block;
+}
