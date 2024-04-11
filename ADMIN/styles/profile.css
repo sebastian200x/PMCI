@@ -6,9 +6,12 @@
 
 }
 
-input[type=text],
-input[type=password],
-input[type=email] {
+
+.profile .wrong {
+    border: 1px solid red;
+}
+
+.profile input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -29,8 +32,6 @@ label {
     flex-wrap: wrap;
 
     justify-content: center;
-
-
 }
 
 .pass {

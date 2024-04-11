@@ -187,6 +187,7 @@ function accountinfo()
 	if ($mysqli === false) {
 		return false;
 	}
+
 	if (isset($_SESSION['admin'])) {
 		$sql = "SELECT * FROM account WHERE id = ?";
 		$stmt = $mysqli->prepare($sql);
@@ -204,6 +205,74 @@ function accountinfo()
 	}
 	return false;
 }
+
+function editprofile($id, $name, $email, $username, $oldpass, $newpass, $confirmpass)
+{
+	$mysqli = connect();
+	if ($mysqli === false) {
+		return false;
+	}
+
+	$stmt = $mysqli->prepare("SELECT * FROM account WHERE id = ?");
+	$stmt->bind_param("s", $id);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$row = $result->fetch_assoc();
+
+	if ($email != $row['email']) {
+		$stmt = $mysqli->prepare("SELECT * FROM account WHERE email = ?");
+		$stmt->bind_param("s", $email);
+		$stmt->execute();
+		$result = $stmt->get_result();
+
+		if ($result->num_rows > 0) {
+			return "Email already exists.";
+		}
+	}
+
+	if ($username != $row['username']) {
+		$stmt = $mysqli->prepare("SELECT * FROM account WHERE username = ?");
+		$stmt->bind_param("s", $username);
+		$stmt->execute();
+		$result = $stmt->get_result();
+
+		if ($result->num_rows > 0) {
+			return "Username already exists.";
+		}
+	}
+
+	// Check if the old password is correct
+	if (!empty($oldpass) && !password_verify($oldpass, $row['password'])) {
+		return "Incorrect old password.";
+	}
+
+	if (!empty($oldpass) && empty($newpass)) {
+		return "New password is required.";
+	}
+
+	if (!empty($newpass) && empty($confirmpass)) {
+		return "Confirm new password.";
+	}
+
+	if (!empty($newpass) && $newpass !== $confirmpass) {
+		return "New password and confirm password do not match.";
+	}
+
+	// Update profile
+	if (!empty($oldpass) && !empty($newpass) && !empty($confirmpass)) {
+		$hashed_password = password_hash($newpass, PASSWORD_DEFAULT);
+		$stmt = $mysqli->prepare("UPDATE account SET name=?, email=?, username=?, password=? WHERE id=?");
+		$stmt->bind_param("sssss", $name, $email, $username, $hashed_password, $id);
+	} else {
+		$stmt = $mysqli->prepare("UPDATE account SET name=?, email=?, username=? WHERE id=?");
+		$stmt->bind_param("ssss", $name, $email, $username, $id);
+	}
+
+	$stmt->execute();
+	return "success";
+}
+
+
 
 function logout()
 {
@@ -805,7 +874,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'del') {
 	if (isset($_POST['id'])) {
 		$id = $_POST['id'];
 		// Call your approveStudent function or any other specific code here
-		
+
 		delholiday($id);
 
 		// Echo a response if needed
