@@ -91,7 +91,7 @@
             </div>
 
             <div class="card">
-                <img src="./styles/images/k12/g7.PNG">
+                <img src="./styles/images/k12/g7.png">
                 <div class="intro">
                     <h1>Grade 7</h1>
                     <p>In Grade 7, students enter

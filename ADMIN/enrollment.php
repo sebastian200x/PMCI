@@ -8,7 +8,8 @@
     <title>Document</title>
 </head>
 <?php
-include 'header.php';
+include (__DIR__ . '/header.php');
+
 
 if (!isset($_SESSION['admin'])) {
     header('location: ./index.php');
