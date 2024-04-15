@@ -66,6 +66,7 @@ body {
     color: rgb(255, 255, 14);
     font-size: 70px;
     text-align: center;
+    cursor: default;
 
 }
 
@@ -74,6 +75,7 @@ body {
     text-align: center;
     width: 70%;
     font-size: 20px;
+    cursor: default;
 }
 
 
